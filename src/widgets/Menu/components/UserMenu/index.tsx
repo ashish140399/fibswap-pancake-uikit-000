@@ -8,44 +8,44 @@ import MenuIcon from "./MenuIcon";
 import { UserMenuItem } from "./styles";
 
 export const StyledUserMenu = styled(Flex)`
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.tertiary};
-  border-radius: 16px;
-  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: inline-flex;
-  height: 32px;
-  padding-left: 40px;
-  padding-right: 8px;
-  position: relative;
-
-  &:hover {
-    opacity: 0.65;
-  }
+align-items: center;
+background: linear-gradient(45deg, rgba(55, 150, 229, 0.1) 0%, rgba(70, 236, 227, 0.1) 100%);
+  border-radius: 8px;
+// box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+display: inline-flex;
+height: auto;
+padding: 10px 24px;
+font-size:14px;
+position: relative;
+color:#fff !important;
+&:hover {
+  opacity: 0.65;
+}
 `;
 
 export const LabelText = styled.div`
-  color: ${({ theme }) => theme.colors.text};
-  display: none;
-  font-weight: 600;
+color: #fff;
+display: none;
+font-weight: 600;
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    display: block;
-    margin-left: 8px;
-    margin-right: 4px;
-  }
+${({ theme }) => theme.mediaQueries.sm} {
+  display: block;
+  margin-left: 8px;
+  margin-right: 4px;
+}
 `;
 
 const Menu = styled.div<{ isOpen: boolean }>`
-  background-color: ${({ theme }) => theme.card.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: 16px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  pointer-events: auto;
-  width: 280px;
-  visibility: visible;
-  z-index: 1001;
+background: linear-gradient(161.19deg,#0c55ab -.1%,#051d46 105.99%);
+// border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+border-radius: 16px;
+padding-bottom: 4px;
+padding-top: 4px;
+pointer-events: auto;
+width: 280px;
+visibility: visible;
+z-index: 1001;
 
   ${({ isOpen }) =>
     !isOpen &&
@@ -110,7 +110,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           setIsOpen((s) => !s);
         }}
       >
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+        {/* <MenuIcon avatarSrc={avatarSrc} variant={variant} /> */}
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
         <ChevronDownIcon color="text" width="24px" />
       </StyledUserMenu>
